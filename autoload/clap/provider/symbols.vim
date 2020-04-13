@@ -1,6 +1,4 @@
 " description: search workspace symbols
-
-let s:prompt = 'Coc Symbols> '
 let s:symbols = {}
 
 let s:kind_dict = {}

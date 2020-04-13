@@ -1,0 +1,62 @@
+*coc-clap.txt*  clap :heart: coc.nvim
+
+===============================================================================
+Contents ~
+
+ 1. Introduction                                        |coc-clap-introduction|
+ 2. Rationale                                              |coc-clap-rationale|
+ 3. Commands                                                |coc-clap-commands|
+ 4. Options                                                  |coc-clap-options|
+ 5. License                                                  |coc-clap-license|
+ 6. References                                            |coc-clap-references|
+
+===============================================================================
+                                                        *coc-clap-introduction*
+Introduction ~
+
+Use clap [1] instead of coc.nvim [2] built-in fuzzy finder.
+
+===============================================================================
+                                                           *coc-clap-rationale*
+Rationale ~
+
+Use clap [1] with coc.nvim [2]. Forked from coc-fzf [4].
+
+===============================================================================
+                                                            *coc-clap-commands*
+Commands ~
+
+| Command                                |   List                              |~
+| `:Clap coc_actions`                      | Equivalent to :CocList actions      |
+| `:Clap coc_commands                    ` | Equivalent to :CocList commands     |
+| `:Clap coc_diagnostics`                  | Equivalent to :CocList diagnostics. |
+| `:Clap coc_extensions`                   | Equivalent to :CocList extensions   |
+| `:Clap coc_location`                     | Equivalent to :CocList location. |
+| `:Clap coc_outline`                      | Equivalent to :CocList outline, with colors. Requires ctags [5] |
+| `:Clap coc_symbols`                      | Equivalent to :CocList symbols |
+| `:Clap coc_services`                     | Equivalent to :CocList services |
+
+===============================================================================
+                                                             *coc-clap-options*
+Options ~
+
+~| Option           | Type | Description                                     | Default value |~
+| g:clap_coc_blink | list | Change the blink pattern. [0, 0] for disabling. | [10, 100]     |
+
+===============================================================================
+                                                             *coc-clap-license*
+License ~
+
+MIT
+
+===============================================================================
+                                                          *coc-clap-references*
+References ~
+
+[1] https://github.com/liuchengxu/vim-clap
+[2] https://github.com/neoclide/coc.nvim
+[3] ./.github/diagnostics_scrot.png
+[4] https://github.com/antoinemadec/coc-fzf
+[5] https://github.com/universal-ctags/ctags
+
+vim: ft=help

@@ -7,7 +7,7 @@ FILENAME="$(basename $PWD).txt"
 # setup
 git clone https://github.com/xolox/vim-tools.git || true
 cd vim-tools
-virtualenv html2vimdoc
+virtualenv -p /usr/bin/python2 html2vimdoc
 html2vimdoc/bin/pip install beautifulsoup4 coloredlogs markdown
 
 # fix Beatiful Soup error

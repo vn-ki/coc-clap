@@ -27,7 +27,7 @@ function! s:format_coc_action(item) abort
   return l:str
 endfunction
 
-function! s:get_actions(a:act) abort
+function! s:get_actions(act) abort
   let l:entries = map(copy(a:act), 's:format_coc_action(v:val)')
   let index = 0
   while index < len(l:entries)
@@ -44,3 +44,7 @@ function! s:parse_action(act) abort
   endif
   return str2nr(l:match)
 endfunction
+
+let s:actions.syntax = 'clap_actions'
+
+let g:clap#provider#actions# = s:actions

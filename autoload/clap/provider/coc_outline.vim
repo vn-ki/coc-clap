@@ -78,4 +78,4 @@ endfunction
 
 let s:outline.syntax = 'clap_outline'
 
-let g:clap#provider#outline# = s:outline
+let g:clap#provider#coc_outline# = s:outline

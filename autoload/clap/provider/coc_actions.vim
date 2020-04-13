@@ -3,7 +3,12 @@
 let s:actions = {}
 
 function! s:actions.source() abort
+  let l:bufnr = bufnr('')
+
+  execute 'keepalt buffer' g:clap.start.bufnr
   let l:actions = CocAction('codeActions')
+  execute 'keepalt buffer' l:bufnr
+
   if !empty(l:actions)
     return s:get_actions(l:actions)
   else
@@ -47,4 +52,4 @@ endfunction
 
 let s:actions.syntax = 'clap_actions'
 
-let g:clap#provider#actions# = s:actions
+let g:clap#provider#coc_actions# = s:actions

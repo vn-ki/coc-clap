@@ -103,4 +103,4 @@ endfunction
 
 let s:symbols.syntax = 'clap_symbols'
 
-let g:clap#provider#symbols# = s:symbols
+let g:clap#provider#coc_symbols# = s:symbols

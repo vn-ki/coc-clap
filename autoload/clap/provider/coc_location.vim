@@ -58,4 +58,4 @@ function! s:parse_location(loc) abort
 endfunction
 
 let s:location.syntax = 'clap_location'
-let g:clap#provider#location# = s:location
+let g:clap#provider#coc_location# = s:location

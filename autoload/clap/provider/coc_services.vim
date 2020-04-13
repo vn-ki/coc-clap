@@ -42,4 +42,4 @@ endfunction
 
 let s:services.syntax = 'clap_services'
 
-let g:clap#provider#services# = s:services
+let g:clap#provider#coc_services# = s:services

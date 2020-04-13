@@ -1,3 +1,4 @@
+" description: diagnostics
 " TODO: Icon
 let s:diagnostics = {}
 
@@ -69,4 +70,4 @@ function! s:parse_error(err) abort
 endfunction
 
 let s:diagnostics.syntax = 'clap_diagnostics'
-let g:clap#provider#diagnostics# = s:diagnostics
+let g:clap#provider#coc_diagnostics# = s:diagnostics

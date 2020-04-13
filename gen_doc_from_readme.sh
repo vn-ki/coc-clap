@@ -8,7 +8,7 @@ FILENAME="$(basename $PWD).txt"
 git clone https://github.com/xolox/vim-tools.git || true
 cd vim-tools
 virtualenv html2vimdoc
-html2vimdoc/bin/pip install beautifulsoup coloredlogs markdown
+html2vimdoc/bin/pip install beautifulsoup4 coloredlogs markdown
 
 # fix Beatiful Soup error
 sed -i "s/logger.addHandler(coloredlogs.ColoredStreamHandler(show_name=True))/coloredlogs.install(level='DEBUG')/" *.py

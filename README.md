@@ -1,35 +1,32 @@
-fzf :heart: coc.nvim
+clap :heart: coc.nvim
 ===============
 
-Use [fzf][fzf] instead of [coc.nvim][coc.nvim] built-in fuzzy finder.
+Use [clap][clap] instead of [coc.nvim][coc.nvim] built-in fuzzy finder.
 
-![](https://raw.githubusercontent.com/antoinemadec/gif/master/coc_fzf.gif)
+![](./.github/diagnostics_scrot.png)
 
 Rationale
 ---------
 
-**❗coc-fzf only supports nvim❗**, PR are welcome if you want to change this.
-
-Inspired by [Robert Buhren's functions][RobertBuhren] and [coc-denite][coc_denite] this plugin aims to use [fzf][fzf] for CocList sources when possible.
-The goal is to keep the [coc.nvim][coc.nvim] style and leverage your [FZF Vim integration][fzf_vim_integration], such as layout, shortcuts, options etc.
+Use [clap][clap] with [coc.nvim][coc.nvim]. Forked from [coc-fzf][coc-fzf].
 
 Commands
 ---------
 
 | Command                                   | List                                                                             |
 | ---                                       | ---                                                                              |
-| `:CocFzfList        `                     | Equivalent to :CocList                                                           |
-| `:CocFzfList actions`                     | Equivalent to :CocList actions                                                   |
-| `:CocFzfList commands`                    | Equivalent to :CocList commands                                                  |
-| `:CocFzfList diagnostics`                 | Equivalent to :CocList diagnostics. Toggle preview: '?'                          |
-| `:CocFzfList diagnostics --current-buf`   | Equivalent to :CocList diagnostics in the current buffer only                    |
-| `:CocFzfList extensions`                  | Equivalent to :CocList extensions                                                |
-| `:CocFzfList location`                    | Equivalent to :CocList location. Toggle preview: '?'. Requires [fzf.vim][fzfvim] |
-| `:CocFzfList outline`                     | Equivalent to :CocList outline, with colors. Requires [ctags][ctags]             |
-| `:CocFzfList symbols`                     | Equivalent to :CocList symbols                                                   |
-| `:CocFzfList symbols --kind {kind}`       | Equivalent to :CocList symbols -kind {kind}                                      |
-| `:CocFzfList services`                    | Equivalent to :CocList services                                                  |
-| `:CocFzfListResume`                       | Equivalent to :CocListResume                                                     |
+<!--| `:Clap        `                     | Equivalent to :CocList                                                           |-->
+| `:Clap coc_actions`                     | Equivalent to :CocList actions                                                   |
+| `:Clap coc_commands`                    | Equivalent to :CocList commands                                                  |
+| `:Clap coc_diagnostics`                 | Equivalent to :CocList diagnostics.                                              |
+<!--| `:Clap diagnostics --current-buf`   | Equivalent to :CocList diagnostics in the current buffer only                    |-->
+| `:Clap coc_extensions`                  | Equivalent to :CocList extensions                                                |
+| `:Clap coc_location`                    | Equivalent to :CocList location.                                                 |
+| `:Clap coc_outline`                     | Equivalent to :CocList outline, with colors. Requires [ctags][ctags]             |
+| `:Clap coc_symbols`                     | Equivalent to :CocList symbols                                                   |
+<!--| `:Clap symbols --kind {kind}`       | Equivalent to :CocList symbols -kind {kind}                                      |-->
+| `:Clap coc_services`                    | Equivalent to :CocList services                                                  |
+<!--| `:ClapResume`                       | Equivalent to :CocListResume                                                     |-->
 
 Options
 ---------
@@ -54,24 +51,12 @@ nnoremap <silent> <space>S  :<C-u>CocFzfList services<CR>
 nnoremap <silent> <space>p  :<C-u>CocFzfListResume<CR>
 ```
 
-FAQ
----------
-
-**Q**: How to get the FZF floating window?
-**A**: You can look at [FZF Vim integration][fzf_vim_integration]:
-```vim
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-```
-
 License
 -------
 
 MIT
 
-[fzf_vim_integration]: https://github.com/junegunn/fzf/blob/master/README-VIM.md
-[fzf]:                 https://github.com/junegunn/fzf
+[clap]:                https://github.com/liuchengxu/vim-clap
 [coc.nvim]:            https://github.com/neoclide/coc.nvim
-[RobertBuhren]:        https://gist.github.com/RobertBuhren/02e05506255c667c0038ce74ee1cef96
-[coc_denite]:          https://github.com/neoclide/coc-denite
+[coc-fzf]:             https://github.com/antoinemadec/coc-fzf
 [ctags]:               https://github.com/universal-ctags/ctags
-[fzfvim]:              https://github.com/junegunn/fzf.vim

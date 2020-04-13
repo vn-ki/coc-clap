@@ -5,6 +5,6 @@ endif
 augroup CocFzfLocation
   autocmd!
   let g:coc_enable_locationlist = 0
-  autocmd User CocLocationsChange Clap location
+  autocmd User CocLocationsChange Clap coc_location
 augroup END
 

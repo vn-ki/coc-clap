@@ -3,6 +3,8 @@ clap :heart: coc.nvim
 
 Use [clap][clap] instead of [coc.nvim][coc.nvim] built-in fuzzy finder.
 
+![][./.github/diagnostics_scrot.png]
+
 Rationale
 ---------
 

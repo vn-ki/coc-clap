@@ -1,4 +1,6 @@
-" description: diagnostics
+" Author: vn-ki@https://github.com/vn-ki
+" Description: List the diagnostics
+
 " TODO: Icon
 let s:diagnostics = {}
 

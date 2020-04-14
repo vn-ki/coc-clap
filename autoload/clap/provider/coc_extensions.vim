@@ -1,4 +1,5 @@
-" description: manage coc extensions
+" Author: vn-ki@https://github.com/vn-ki
+" Description: List/manage the coc extensions
 
 let s:extensions = {}
 

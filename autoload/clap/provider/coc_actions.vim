@@ -1,4 +1,5 @@
-" description: code actions of selected range
+" Author: vn-ki@https://github.com/vn-ki
+" Description: List the code actions of selected range
 
 let s:actions = {}
 

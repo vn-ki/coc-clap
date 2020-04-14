@@ -1,4 +1,6 @@
-" description: registered services of coc.nvim
+" Author: vn-ki@https://github.com/vn-ki
+" Description: List the registered services of coc.nvim
+
 let s:services = {}
 
 function! s:services.source() abort

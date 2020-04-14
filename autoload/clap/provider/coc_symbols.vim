@@ -1,4 +1,6 @@
-" description: search workspace symbols
+" Author: vn-ki@https://github.com/vn-ki
+" Description: List the workspace symbols
+
 let s:symbols = {}
 
 let s:kind_dict = {}

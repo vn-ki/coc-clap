@@ -1,4 +1,5 @@
-" description: registered commands of coc.nvim
+" Author: vn-ki@https://github.com/vn-ki
+" Description: List the registered commands of coc.nvim
 
 let s:commands = {}
 

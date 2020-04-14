@@ -1,4 +1,5 @@
-" TODO: Icon
+" Author: vn-ki@https://github.com/vn-ki
+" Description: List the location items
 
 let s:location = {}
 

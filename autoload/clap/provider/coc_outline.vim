@@ -1,4 +1,5 @@
-" description: symbols of current document
+" Author: vn-ki@https://github.com/vn-ki
+" Description: List the symbols of current document
 
 let s:outline = {}
 

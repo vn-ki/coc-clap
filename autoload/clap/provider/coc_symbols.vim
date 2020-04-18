@@ -84,10 +84,15 @@ function! s:format_symbols(item) abort
 
   let l:cwd = getcwd()
   let l:filename = substitute(a:item.location.uri, 'file://' . l:cwd . "/", "", "")
+  try
+    let kind = s:kind_dict[a:item.kind]
+  catch
+    let kind = "?"
+  endtry
   let l:loc = a:item.location.range.start
   " Only use start for now
   " TODO: Highlight everything?
-  return printf("%s [%s] %s %d,%d", a:item.name, s:kind_dict[a:item.kind], l:filename, l:loc.line, l:loc.character)
+  return printf("%s [%s] %s %d,%d", a:item.name, kind, l:filename, l:loc.line, l:loc.character)
 endfunction
 
 function! s:get_symbols(syms) abort

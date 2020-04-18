@@ -6,7 +6,6 @@ let s:diagnostics = {}
 
 function! s:diagnostics.source(...) abort
   " TODO: Implement curr buffer
-  let bufs = floaterm#buflist#gather()
   let diagnostics = CocAction('diagnosticList')
 
   if empty(diagnostics)

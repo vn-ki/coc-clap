@@ -39,7 +39,7 @@ let s:extensions.syntax = 'clap_coc_extensions'
 let s:extensions.action = {
       \ '&Uninstall': { -> s:invoke_action('uninstallExtension', 'uninstalled') },
       \ '&Reload': { -> s:invoke_action('reloadExtension', 'reloaded') },
-      \ '&DeactivateExtension': { -> s:invoke_action('deactivateExtension', 'deactivated') },
+      \ '&Deactivate': { -> s:invoke_action('deactivateExtension', 'deactivated') },
       \ '&Toggle': { -> s:invoke_action('toggleExtension', 'toggled') },
       \ }
 let g:clap#provider#coc_extensions# = s:extensions

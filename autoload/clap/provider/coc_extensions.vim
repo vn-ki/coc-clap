@@ -32,6 +32,7 @@ function! s:invoke_action(cmd, msg) abort
     let g:clap.display.initial_size = len(refreshed_source)
     call clap#indicator#set_matches_number(len(refreshed_source))
   endif
+  call clap#helper#echo_info('extension '.id.' '.a:msg)
 endfunction
 
 let s:extensions.syntax = 'clap_coc_extensions'

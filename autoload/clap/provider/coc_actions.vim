@@ -3,15 +3,17 @@
 
 let s:actions = {}
 
+let s:code_actions = []
+
 function! s:actions.source() abort
   let l:bufnr = bufnr('')
 
   execute 'keepalt buffer' g:clap.start.bufnr
-  let l:actions = CocAction('codeActions')
+  let s:code_actions = CocAction('codeActions')
   execute 'keepalt buffer' l:bufnr
 
-  if !empty(l:actions)
-    return s:get_actions(l:actions)
+  if !empty(s:code_actions)
+    return s:get_actions(s:code_actions)
   else
     return [v:exception]
   endif
@@ -20,7 +22,7 @@ endfunction
 function! s:actions.sink(curline) abort
   let l:index = s:parse_action(a:curline)
   if type(l:index) == v:t_number
-    call CocAction('doCodeAction', g:coc_fzf_actions[l:index])
+    call CocAction('doCodeAction', s:code_actions[l:index])
   endif
 endfunction
 

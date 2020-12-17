@@ -16,7 +16,7 @@ endfunction
 " TODO: implement sink*
 function! s:location.sink(curline) abort
   let l:parsed = s:parse_location(a:curline)
-  if type(l:parsed) == v:t_dict
+  if l:parsed isnot v:null
     execute 'buffer' bufnr(l:parsed["filename"], 1)
     call cursor(l:parsed["lnum"], l:parsed["col"])
     normal! zz
@@ -24,10 +24,21 @@ function! s:location.sink(curline) abort
   endif
 endfunction
 
+function! s:location_sink_star(lines) abort
+  let items = []
+  for line in a:lines
+    let parsed = s:parse_location(line)
+    if !empty(parsed)
+      call add(items, parsed)
+    endif
+  endfor
+  call clap#util#open_quickfix(items)
+endfunction
+
 function! s:location.on_move() abort
   let curline = g:clap.display.getcurline()
   let l:parsed = s:parse_location(curline)
-  if type(l:parsed) != v:t_dict
+  if l:parsed is v:null
     return
   endif
 
@@ -53,10 +64,11 @@ endfunction
 function! s:parse_location(loc) abort
   let l:match = matchlist(a:loc, '^\(\S\+\):\(\d\+\):\(\d\+\):\(.*\)')[1:4]
   if empty(l:match) || empty(l:match[0])
-    return
+    return v:null
   endif
-  return ({'filename': l:match[0], 'lnum': l:match[1], 'col': l:match[2], 'text': l:match[3]})
+  return {'filename': l:match[0], 'lnum': l:match[1], 'col': l:match[2], 'text': l:match[3]}
 endfunction
 
 let s:location.syntax = 'clap_location'
+let s:location['sink*'] = function('s:location_sink_star')
 let g:clap#provider#coc_location# = s:location

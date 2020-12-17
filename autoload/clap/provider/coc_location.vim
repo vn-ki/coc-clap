@@ -13,7 +13,6 @@ function! s:location.source() abort
   endif
 endfunction
 
-" TODO: implement sink*
 function! s:location.sink(curline) abort
   let l:parsed = s:parse_location(a:curline)
   if l:parsed isnot v:null
@@ -25,14 +24,14 @@ function! s:location.sink(curline) abort
 endfunction
 
 function! s:location_sink_star(lines) abort
-  let items = []
+  let l:items = []
   for line in a:lines
-    let parsed = s:parse_location(line)
-    if !empty(parsed)
-      call add(items, parsed)
+    let l:parsed = s:parse_location(line)
+    if l:parsed isnot v:null
+      call add(l:items, l:parsed)
     endif
   endfor
-  call clap#util#open_quickfix(items)
+  call clap#util#open_quickfix(l:items)
 endfunction
 
 function! s:location.on_move() abort

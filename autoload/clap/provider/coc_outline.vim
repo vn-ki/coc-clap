@@ -4,13 +4,7 @@
 let s:outline = {}
 
 function! s:outline.source() abort
-  let l:bufnr = bufnr('')
-
-  execute 'keepalt buffer' g:clap.start.bufnr
-  let l:outline = s:get_outline()
-  execute 'keepalt buffer' l:bufnr
-
-  return l:outline
+  return s:get_outline()
 endfunction
 
 function! s:outline.sink(curline) abort
@@ -48,7 +42,12 @@ function! s:format_coc_outline_docsym(item) abort
 endfunction
 
 function! s:get_outline() abort
-  let l:symbols = CocAction('documentSymbols')
+  let l:bufnr = g:clap.start.bufnr
+  if empty(bufname(l:bufnr))
+    return ['buffer name is empty']
+  endif
+
+  let l:symbols = CocAction('documentSymbols', l:bufnr)
   if type(l:symbols) != v:t_list
     " ctags: try force language to filtetype
     let l:ctags_base_cmd = 'set -o pipefail && ctags -f - --excmd=number'

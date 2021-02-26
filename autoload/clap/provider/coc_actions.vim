@@ -6,11 +6,12 @@ let s:actions = {}
 let s:code_actions = []
 
 function! s:actions.source() abort
-  let l:bufnr = bufnr('')
+  let l:bufnr = g:clap.start.bufnr
+  if empty(bufname(l:bufnr))
+    return ['buffer name is empty']
+  endif
 
-  execute 'keepalt buffer' g:clap.start.bufnr
-  let s:code_actions = CocAction('codeActions')
-  execute 'keepalt buffer' l:bufnr
+  let s:code_actions = CocAction('codeActions', l:bufnr)
 
   if !empty(s:code_actions)
     return s:get_actions(s:code_actions)

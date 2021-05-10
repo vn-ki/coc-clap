@@ -1,5 +1,5 @@
 function! coc_clap#highlight_preview(fpath, lnum) abort
-  let [start, end, hi_lnum] = clap#preview#get_line_range(a:lnum, 5)
+  let [start, end, hi_lnum] = clap#preview#get_range(a:lnum)
   let lines = readfile(expand(a:fpath), '')
   let preview_lines = lines[start : end]
   call insert(preview_lines, a:fpath)

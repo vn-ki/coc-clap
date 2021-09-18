@@ -69,5 +69,10 @@ function! s:parse_location(loc) abort
 endfunction
 
 let s:location.syntax = 'clap_location'
+let s:location.on_move_async = { -> clap#client#call_on_move(
+      \ 'on_move',
+      \ function('clap#impl#on_move#handler'),
+      \ {'enable_icon': v:false, 'provider_id': 'coc_location'},
+      \ )}
 let s:location['sink*'] = function('s:location_sink_star')
 let g:clap#provider#coc_location# = s:location
